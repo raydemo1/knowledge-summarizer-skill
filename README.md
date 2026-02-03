@@ -195,15 +195,32 @@ A: PagedAttention splits KV Cache into fixed-size blocks that can be stored non-
 
 ### For Google AI Studio / Gemini Desktop
 
-1. Download the `knowledge-summarizer.skill` file
+1. Download the latest `knowledge-summarizer.skill` file from [Releases](https://github.com/raydemo1/knowledge-summarizer-skill/releases)
 2. Import it into your AI assistant
 3. The skill will automatically activate when you request knowledge summaries
 
 ### Manual Installation
 
-1. Clone this repository
-2. Copy the `knowledge-summarizer` folder to your skills directory
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/raydemo1/knowledge-summarizer-skill.git
+   ```
+2. Copy the `skill/` folder to your skills directory
 3. The skill will be available for use
+
+### Repository Structure
+
+```
+knowledge-summarizer-skill/
+├── skill/
+│   └── SKILL.md          # Main skill definition
+├── .github/
+│   └── workflows/
+│       └── release.yml   # Automated release workflow
+├── README.md             # This file
+├── LICENSE               # MIT License
+└── .gitignore
+```
 
 ## 🔧 Technical Details
 
