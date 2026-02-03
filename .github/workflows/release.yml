@@ -1,0 +1,24 @@
+name: Create Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Create skill package
+        run: |
+          zip -r knowledge-summarizer.skill SKILL.md README.md LICENSE .gitignore
+      
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: knowledge-summarizer.skill
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
